@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+
+    <!--the id should be unique and no other bottom have the same
+        and when we pressed the buttom something logical should happen can do that in the main activity -->
+    <Button
+        android:id="@+id/hello"
+        android:layout_width="121dp"
+        android:layout_height="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/show_toast" />
+</RelativeLayout>
