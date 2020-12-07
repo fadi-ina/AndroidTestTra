@@ -2,12 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- mean that every thing will arrange vertical-->
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/showmesstext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/textview"
-        android:textSize="40dp" />
+        android:padding="10dp"
+        android:text="@string/textview2"
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+android:layout_margin="20dp"
+        android:textStyle="bold" />
 </LinearLayout>

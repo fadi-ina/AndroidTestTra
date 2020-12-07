@@ -47,15 +47,20 @@ private lateinit var mess:EditText
     buttonShowMessageToast.setOnClickListener { // when clicked on this button second activity page will appear and show the message from the previous activity
         val essStore =
             mess.text.toString()  // get the text from the plain text in the layout and convert it to string to show it
-        Toast.makeText(this, essStore, Toast.LENGTH_LONG)
-            .show() // we didn't see the mess because of the .show() fun
 
+/*// we are using the explicit intent mean that we know the target activity
+* if not then would be the implicit intent mean that we don't know the target activity */
         val internt = Intent(
             this,
-            SecondActivity::class.java
+            SecondActivity::class.java // this is java class file when you want to call any activity
         )  // to make the transition between activities we have Intent method that put the current
         // activity and second parameter is the target activity
-        startActivity(internt) // then start the
+
+        intent.putExtra("user_message",essStore) // the putextra method in the intent class is to pass the parameter to the second activity
+        // first parameter is the unique key use it to exract the value from it in the second activity and second para is the value that we are passing
+
+
+        startActivity(internt)
     }
     }
 }
