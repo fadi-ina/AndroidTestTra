@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() { // every screen is a seperated avtivi
     // this class AppCompatActivity inherent it to call the onCreate method to lunch the app
     // this is activity and we can declare it like that Activity() but with the evaluation of the android used to use the AppCompatActivity()
     // also activity are component so we have to mention them in the AndroidManifest.xml file to tell that at the home first screen will be this avtivity
-   private lateinit var buttompress:Button
+   private lateinit var buttompress: Button
 
     override fun onCreate(savedInstanceState: Bundle?) { // we have to make sure in the first that we got the fun that have one parameter
         // which the fun of OnClick is the base for the app
@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity() { // every screen is a seperated avtivi
         // the path of it is the R(resource) then (layout)file then(activity_main)which is the xml file
         setContentView(R.layout.activity_main)
 
-buttompress=findViewById(R.id.hello)
+ buttompress=findViewById(R.id.hello)
 // here will declare the usage of the bottom
         buttompress.setOnClickListener {  // here hello is the id of the button that we have already change it
             // to get it from the xml we  have to use the extension and PLUGIN put it in the gradle ********** apply plugin: 'kotlin-android-extensions' *****
-            // here we can write the code to be excuted when clicked on the bottom
+            // here we can write the code to be executed when clicked on the bottom
             Log.i(
                 "mainActivity",
                 "the bottom have been clicked"
