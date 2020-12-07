@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() { // every screen is a seperated avtivi
    private lateinit var buttonShowMessageToast: Button
 private lateinit var mess:EditText
 
+
     override fun onCreate(savedInstanceState: Bundle?) { // we have to make sure in the first that we got the fun that have one parameter
         // which the fun of OnClick is the base for the app
         super.onCreate(savedInstanceState)
@@ -58,11 +59,20 @@ private lateinit var mess:EditText
 
         intent.putExtra("user_message",essStore) // the putextra method in the intent class is to pass the parameter to the second activity
         // first parameter is the unique key use it to exract the value from it in the second activity and second para is the value that we are passing
-
-
         startActivity(internt)
     }
-    }
+        /*the implicit intent means to share our data with other apps that the user will decide which one */
+        val btnshareotherapps = findViewById<Button>(R.id.btnshareapps)
+        btnshareotherapps.setOnClickListener {
+            val essStore = mess.text.toString()  // get the text from the plain text in the layout and convert it to string to show it
+            val intent = Intent() // creating instance from to access
+            intent.action = Intent.ACTION_SEND //
+            intent.putExtra(Intent.EXTRA_TEXT,essStore)  // pass the key which is predefined key in android that help other apps to know or to read and share this , responsible for showing the options
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent,"share to: ")) // this is the section of showing the window of choosing and the text that want to view
+
+        }
+        }
 }
 
 
