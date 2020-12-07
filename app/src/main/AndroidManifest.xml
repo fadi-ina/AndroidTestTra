@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.messshareapp">
 
-    <service android:name="com.google.android.gms.measurement.AppMeasurementService"
-        android:enabled="true"
-        android:exported="false"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MessShareApp">
+        <!--this is to solve the problem of the appmeasurement not registered in the logcat while usign the second activity-->
         <service android:name="com.google.android.gms.measurement.AppMeasurementService"
             android:enabled="true"
             android:exported="false"/>
@@ -22,6 +21,7 @@
                 <action android:name="com.android.vending.INSTALL_REFERRER"/>
             </intent-filter>
         </receiver>
+
 
         <activity android:name=".MainActivity">
             <intent-filter>

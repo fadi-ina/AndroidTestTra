@@ -44,14 +44,19 @@ private lateinit var mess:EditText
         mess=findViewById(R.id.editTextTextPersonName)  // Binding view
         buttonShowMessageToast=findViewById(R.id.SendMessToNextActivity)
 
-    buttonShowMessageToast.setOnClickListener{ // when clicked on this button second activity page will appear and show the message from the previous activity
-        val essStore = mess.text.toString()  // get the text from the plain text in the layout and convert it to string to show it
-        Toast.makeText(this,essStore,Toast.LENGTH_LONG).show() // we didn't see the mess because of the .show() fun
-    }
-        val internt=Intent(this,SecondActivity::class.java)  // to make the transition between activities we have Intent method that put the current
+    buttonShowMessageToast.setOnClickListener { // when clicked on this button second activity page will appear and show the message from the previous activity
+        val essStore =
+            mess.text.toString()  // get the text from the plain text in the layout and convert it to string to show it
+        Toast.makeText(this, essStore, Toast.LENGTH_LONG)
+            .show() // we didn't see the mess because of the .show() fun
+
+        val internt = Intent(
+            this,
+            SecondActivity::class.java
+        )  // to make the transition between activities we have Intent method that put the current
         // activity and second parameter is the target activity
         startActivity(internt) // then start the
-
+    }
     }
 }
 
